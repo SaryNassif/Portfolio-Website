@@ -1,92 +1,29 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+    
 }
 
-html, body {
-    height: 100%; 
-}
-
-body{
-    padding: 0;
+body {
     margin: 0;
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
 }
-.sidebarthing{
+
+.bigcontainer{
+    display: flex;
+}
+
+.leftnavbar{
     width: 18%;
-    background-color: rgb(81, 79, 79);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
-    padding: 10px 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-}
-hr {
-    border: 1px solid rgb(30, 28, 28);
-    width: 80%;
-    margin: 10px 0;
-}
-.circleprofile{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-}
-.miniprofileimage {
-    border-radius: 50%;
-    margin-top: 10px;
-    transition: transform 0.3s ease;
+    background-color: rgb(47, 45, 45);
 }
 
-.miniprofileimage:hover {
-    transform: scale(1.1);
+.rightmaincontent{
+    width: 82%;
+    background-color: gray;
 }
 
-.sarynassifbox {
-    cursor: pointer;
-    padding: 10px 15px;
-    background-color: #5f5f5f;
-    border: 1.5px solid #444;
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    font-size: 16px;
-    color: #fff;
+.leftnavbar,.rightmaincontent{
+    min-height: 100vh;
+    height: auto;
+    padding: 10px;
 }
-
-.sarynassifbox:hover {
-    transform: scale(1.1);
-    background-color: #767676;
-}
-
-.sidebarbuttons {
-    background-color: #00d4ff;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sidebarbuttons:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-main {
-    flex: 1;
-    background-color: #f0f0f0;
-    padding: 20px;
-    color: #333;
-    height: 100vh;
-}
-
-/**/
-
