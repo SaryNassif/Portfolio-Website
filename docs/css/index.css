@@ -1,0 +1,60 @@
+body{
+    background-color: gray;
+    padding: 0;
+    margin: 0;
+}
+.sidebarthing{
+    width: 15%;
+    background-color: rgb(81, 79, 79);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+hr {
+    border: 1px solid rgb(30, 28, 28);
+    width: 80%;
+    margin: 10px 0;
+}
+.circleprofile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+.miniprofileimage {
+    border-radius: 50%;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.miniprofileimage:hover {
+    transform: scale(1.1);
+}
+
+.sarynassifbox{
+    cursor: pointer;
+    border: 1.5px solid black;
+    border-radius: 5%;
+    transition: transform 0.3s ease;
+}
+
+.sarynassifbox:hover{
+    transform: scale(1.1);
+}
+
+.sidebarbuttons{
+    background-color: aqua;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.sidebarbuttons:hover{
+    transform: scale(1.1);
+}
