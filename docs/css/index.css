@@ -1,11 +1,9 @@
 * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif
-    
-}
-
-body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .bigcontainer{
@@ -15,6 +13,7 @@ body {
 .leftnavbar{
     width: 18%;
     background-color: rgb(47, 45, 45);
+    padding: 10px;
 }
 
 .rightmaincontent{
@@ -25,5 +24,39 @@ body {
 .leftnavbar,.rightmaincontent{
     min-height: 100vh;
     height: auto;
-    padding: 10px;
 }
+
+/**scroll animation**/
+
+section{
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.scrollcontainer{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.one {
+    background-color: #F4F4F9; /* Light grayish background for About Me */
+}
+
+.two {
+    background-color: #E0E4E9; /* Slightly darker gray for Skills */
+}
+
+.three {
+    background-color: #D1D8E0; /* Soft blue for Projects */
+}
+
+.four {
+    background-color: #B4C6E4; /* Lighter blue for Education */
+}
+
+
