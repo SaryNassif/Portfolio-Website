@@ -1,22 +1,18 @@
-console.log("rapreh")
 const scrollContainer = document.querySelector('.scrollcontainer');
 let isScrolling = false;
 
-scrollContainer.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    
+// Function to handle scroll
+function handleScroll(delta) {
     if (!isScrolling) {
         isScrolling = true;
         
-        const direction = e.deltaY > 0 ? 1 : -1;
+        const direction = delta > 0 ? 1 : -1;
         const sections = document.querySelectorAll('section');
         const currentScroll = scrollContainer.scrollTop;
         const sectionHeight = window.innerHeight;
         
-        // Calculate target section
         const targetSection = Math.round(currentScroll / sectionHeight) + direction;
         
-        // Ensure target is within bounds
         if (targetSection >= 0 && targetSection < sections.length) {
             scrollContainer.scrollTo({
                 top: targetSection * sectionHeight,
@@ -24,9 +20,26 @@ scrollContainer.addEventListener('wheel', (e) => {
             });
         }
         
-        // Reset scroll flag after animation
         setTimeout(() => {
             isScrolling = false;
         }, 500);
     }
+}
+
+// Wheel event (mouse wheel)
+scrollContainer.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    handleScroll(e.deltaY);
+}, { passive: false });
+
+// Touch events (for trackpad)
+let touchStart = 0;
+scrollContainer.addEventListener('touchstart', (e) => {
+    touchStart = e.touches[0].clientY;
+});
+
+scrollContainer.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const delta = touchStart - e.touches[0].clientY;
+    handleScroll(delta);
 }, { passive: false });
