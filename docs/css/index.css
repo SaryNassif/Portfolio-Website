@@ -1,5 +1,6 @@
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -7,6 +8,8 @@
 }
 
 .bigcontainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -14,10 +17,19 @@
     width: 18%;
     background-color: rgb(205, 205, 205);
     padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     gap: 15px;
     overflow: hidden;
 }
@@ -25,11 +37,17 @@
 .leftnavbar img{
     border-radius: 50%;
     border: 2px solid rgb(90, 88, 88);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .leftnavbar img:hover{
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 .circle {
@@ -37,14 +55,21 @@
     height: 40px;
     background-color: #fff; /* Color of the circle */
     border-radius: 50%; /* Make it circular */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
     margin-bottom: 10px; /* Adjust spacing */
     border: 2px solid rgb(90, 88, 88);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .circle:hover{
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 hr{
@@ -66,15 +91,22 @@ hr{
 
 section{
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     scroll-snap-align: start;
 }
 
 .scrollcontainer{
-    scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
 }
@@ -101,8 +133,13 @@ section{
     top: 40px;
     right: 40px;
     z-index: 1000;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 10px;
 }
 
@@ -112,10 +149,14 @@ section{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
     background-color: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
