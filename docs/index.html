@@ -19,6 +19,12 @@
             </div>
 
             <div class="rightmaincontent">
+
+                <div class="navbar">
+                    <button id="upBtn" class="nav-btn">Up</button>
+                    <button id="downBtn" class="nav-btn">Down</button>
+                </div>
+                
                 <div class="scrollcontainer">
                     <section class="one">
                         <h1>About Me</h1>
@@ -41,25 +47,21 @@
     </main>
 
     <script>
-        // Add wheel event listener to enforce snap scrolling
         const scrollContainer = document.querySelector('.scrollcontainer');
+        const upBtn = document.getElementById('upBtn');
+        const downBtn = document.getElementById('downBtn');
         let isScrolling = false;
         
-        scrollContainer.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            
+        function scrollToSection(direction) {
             if (!isScrolling) {
                 isScrolling = true;
                 
-                const direction = e.deltaY > 0 ? 1 : -1;
-                const sections = document.querySelectorAll('section');
                 const currentScroll = scrollContainer.scrollTop;
                 const sectionHeight = window.innerHeight;
+                const currentSection = Math.round(currentScroll / sectionHeight);
+                const targetSection = currentSection + direction;
+                const sections = document.querySelectorAll('section');
                 
-                // Calculate target section
-                const targetSection = Math.round(currentScroll / sectionHeight) + direction;
-                
-                // Ensure target is within bounds
                 if (targetSection >= 0 && targetSection < sections.length) {
                     scrollContainer.scrollTo({
                         top: targetSection * sectionHeight,
@@ -67,12 +69,47 @@
                     });
                 }
                 
-                // Reset scroll flag after animation
                 setTimeout(() => {
                     isScrolling = false;
                 }, 500);
             }
+        }
+        
+        scrollContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const direction = e.deltaY > 0 ? 1 : -1;
+            scrollToSection(direction);
         }, { passive: false });
+        
+        if (upBtn && downBtn) {
+            upBtn.addEventListener('click', () => scrollToSection(-1));
+            downBtn.addEventListener('click', () => scrollToSection(1));
+        }
+        
+        let touchStart = 0;
+        scrollContainer.addEventListener('touchstart', (e) => {
+            touchStart = e.touches[0].clientY;
+        });
+        
+        scrollContainer.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const delta = touchStart - e.touches[0].clientY;
+            const direction = delta > 0 ? 1 : -1;
+            scrollToSection(direction);
+        }, { passive: false });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                scrollToSection(-1);
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                scrollToSection(1);
+            }
+        });
+
+        console.log('Up button found:', !!upBtn);
+        console.log('Down button found:', !!downBtn);
     </script>
 </body>
 </html>
