@@ -16,7 +16,7 @@
 .leftnavbar{
     width: 18%;
     background-color: rgb(205, 205, 205);
-    padding: 10px;
+    padding: 50px 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -159,4 +159,38 @@ section{
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);
+}
+
+/**about**/
+.one{
+    position: relative;
+}
+
+.box-container {
+    position: absolute;
+    text-align: center; 
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#cont-1{
+    top:10%;
+    left: 10%;
+}
+
+#cont-2{
+    right: 10%;
+    bottom: 10%;
 }
